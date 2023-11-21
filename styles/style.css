@@ -264,10 +264,6 @@
     grid-column: span 3;
   }
 
-  .gallery-list {
-    grid-column: span 3;
-  }
-
   .main {
     gap: 80px;
     padding: 60px 20px;
@@ -279,6 +275,7 @@
 
   .gallery-list {
     grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
     gap: 20px;
   }
 
