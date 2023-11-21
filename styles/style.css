@@ -2,4 +2,320 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--text-color, #f1b2ce);
+  font-family: var(--page-font-family, "IBM Plex mono", sans-serif);
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: var(--bg-color, #000028);
+  background-image: var(
+    --page-background-image,
+    url("../images/cover-image.png")
+  );
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  min-block-size: 100vh;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--title-color, #ff0070);
+  border-block-start: 1px solid var(--title-color, #ff0070);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--title-color, #ff0070);
+  border-block-end: 1px solid var(--title-color, #ff0070);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.rec-decoration {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  visibility: var(--rec-decoration-visibility, visible);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: clamp(20px, 0.6536rem + 2.5445vw, 30px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.rec-decoration::before {
+  content: "REC";
+  color: var(--accent-color, #ff0070);
+  line-height: 24px;
+}
+
+.rec-decoration::after {
+  content: "";
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--accent-color, #ff0070);
+  background: var(--accent-color, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 13px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 2px 12px;
+  color: var(--title-color, #ff0070);
+  line-height: 18px;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--accent-color-40, #ff007066);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+
+.header__theme-menu-button_active {
+  border-color: currentColor;
+  cursor: default;
+  pointer-events: none;
+}
+
+.page__title {
+  color: var(--brand-color, #db00ff);
+  font-weight: 700;
+  font-size: clamp(116px, 7.0115rem + 1.0178vw, 120px);
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.header__title {
+  justify-self: end;
+  color: var(--color-black, #000028);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  background: var(--accent-color, #ff0070);
+  block-size: min-content;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  padding: 40px clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.title {
+  color: var(--title-color, #ff0070);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.title__decoration {
+  color: var(--color-black, #000028);
+  background: var(--accent-color, #ff0070);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+.link:hover {
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.articles-list {
+  display: grid;
+  gap: 20px;
+}
+
+.article {
+  display: grid;
+  gap: 10px;
+}
+
+.section__secondlevel {
+  display: grid;
+  gap: 20px;
+}
+
+.title__decoration-secondlevel {
+  color: var(--color-black, #000028);
+  font-weight: 400;
+  background: var(--accent-color, #ff0070);
+}
+
+.section-gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-list {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-list__item-img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.footer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: clamp(10px, 0.2639rem + 1.5408vw, 20px);
+  min-block-size: 100vh;
+}
+
+.footer__title {
+  color: var(--brand-color, #db00ff);
+  font-weight: 700;
+  font-size: clamp(116px, 7.0115rem + 1.0178vw, 120px);
+  line-height: 82.5%; /* 95.7px */
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+@media (width >= 768px) {
+  .header__title {
+    width: 50%;
+  }
+
+  .page__title {
+    position: relative;
+    font-size: clamp(120px, 0.5625rem + 14.4531vw, 157px);
+    inset-inline-end: 20px;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .articles-list__section-why {
+    grid-column: span 2;
+    margin-left: 7px;
+  }
+
+  .title__section-what {
+    grid-column: span 1;
+  }
+
+  .articles-list__section-what {
+    grid-column: span 3;
+  }
+
+  .section__secondlevel_section-how {
+    grid-column: span 2;
+    margin-left: 7px;
+  }
+  .title__section-gallery {
+    grid-column: span 3;
+  }
+
+  .gallery-list {
+    grid-column: span 3;
+  }
+
+  .main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .section-gallery {
+    gap: 20px;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-list__item:first-child,
+  .gallery-list__item:last-child {
+    grid-column: span 2;
+  }
+  .gallery-list__item:nth-child(2),
+  .gallery-list__item:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .footer__title {
+    font-size: clamp(120px, 0.5625rem + 14.4531vw, 157px);
+  }
+}
+
+@media (width >= 1024px) {
+  .articles-list__section-what {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header__theme-menu {
+    justify-content: center;
+    align-items: center;
+    margin-block-end: auto;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section__secondlevel_section-how,
+  .articles-list__section-why {
+    margin-left: 0px;
+  }
 }
