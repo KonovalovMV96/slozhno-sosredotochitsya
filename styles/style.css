@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   color: var(--text-color, #f1b2ce);
-  font-family: var(--page-font-family, "IBM Plex mono", sans-serif);
+  font-family: var(--page-font-family, "IBM Plex mono", monospace);
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--bg-color, #000028);
@@ -21,7 +21,8 @@
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  min-block-size: 100vh;
+  min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .decorated-zone {
@@ -221,7 +222,8 @@
   justify-items: center;
   align-items: center;
   padding: clamp(10px, 0.2639rem + 1.5408vw, 20px);
-  min-block-size: 100vh;
+  min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .footer__title {

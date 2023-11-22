@@ -17,7 +17,7 @@
   --color-black: #000028;
   --bg-color: #000028;
 
-  --page-font-family: "IBM Plex mono", sans-serif;
+  --page-font-family: "IBM Plex mono", monospace;
   --page-background-image: url("..//images/cover-image-dark.png ");
   --page-background-color: var(--bg-color, #000028);
 
